@@ -9,6 +9,7 @@ public class E26LibroSerializable{
         boolean continuar = true;
 
         libro.add(new Libro("Brimstone", "Callie Hart", 2026));
+        //USO DE GEMINI
         libro.add(new Libro("Cien años de soledad", "Gabriel García Márquez", 1967));
         libro.add(new Libro("1984", "George Orwell", 1949));
         libro.add(new Libro("El resplandor", "Stephen King", 1977));
