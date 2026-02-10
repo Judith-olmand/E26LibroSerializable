@@ -23,16 +23,16 @@ public class LeerLibro {
 
 
     public static List<Libro> leerLibro2(String archivo) {
+        List<Libro> libros2 = new ArrayList<>();
 
-        List<Libro> libros = new ArrayList<>();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
-            libros = (List<Libro>) ois.readObject();
+            libros2 = (List<Libro>) ois.readObject();
 
 
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error al leer el objeto: " + e.getMessage());
         }
 
-        return libros;
+        return libros2;
     }
 }

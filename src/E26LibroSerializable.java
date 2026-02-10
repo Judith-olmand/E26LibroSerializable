@@ -15,13 +15,19 @@ public class E26LibroSerializable{
         libro.add(new Libro("La sombra del viento", "Carlos Ruiz Zafón", 2001));
         libro.add(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605));
 
-        CrearFichero.crearFichero(libro);
+        System.out.println("Introduce el archivo que quiere escribir:");
+        String archivo = sc.nextLine();
+        System.out.println();
+
+
+        CrearFichero.crearFichero(libro, archivo);
         //LeerLibro.leerLibro();
 
-
-        List<Libro> libros2 = LeerLibro.leerLibro2("libro.ser");
+        List<Libro> libros2 = LeerLibro.leerLibro2(archivo);
         for (Libro libro1 : libros2) {
-            System.out.println(libro1.getTitulo() + libro1.getAutor() + libro1.getAnioPublicacion());
+            System.out.println("Titulo: " + libro1.getTitulo() );
+            System.out.println("        Nombre del autor: " + libro1.getAutor() );
+            System.out.println("                Año de publicación: " + libro1.getAnioPublicacion());
         }
 
         do {
@@ -47,9 +53,15 @@ public class E26LibroSerializable{
 
         System.out.println();
 
-        CrearFichero.crearFichero(libro);
+        CrearFichero.crearFichero(libro, archivo);
         //LeerLibro.leerLibro();
 
+        libros2 = LeerLibro.leerLibro2(archivo);
+        for (Libro libro1 : libros2) {
+            System.out.println("Titulo: " + libro1.getTitulo() );
+            System.out.println("        Nombre del autor: " + libro1.getAutor() );
+            System.out.println("                Año de publicación: " + libro1.getAnioPublicacion());
+        }
 
 
     }

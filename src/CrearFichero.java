@@ -4,9 +4,9 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class CrearFichero {
-    public static void crearFichero(List<Libro> libro) {
+    public static void crearFichero(List<Libro> libro, String archivo) {
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("libro.ser"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
             oos.writeObject(libro);
             System.out.println("Objeto Persona serializado y guardado en persona.ser");
 
