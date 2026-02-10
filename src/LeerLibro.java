@@ -1,10 +1,11 @@
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LeerLibro {
-    public static void leerLibro() {
+    /*public static void leerLibro() {
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("libro.ser"))) {
             List<Libro> libros = (List<Libro>) ois.readObject();
@@ -18,5 +19,20 @@ public class LeerLibro {
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error al leer el objeto: " + e.getMessage());
         }
+    }*/
+
+
+    public static List<Libro> leerLibro2(String archivo) {
+
+        List<Libro> libros = new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
+            libros = (List<Libro>) ois.readObject();
+
+
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al leer el objeto: " + e.getMessage());
+        }
+
+        return libros;
     }
 }

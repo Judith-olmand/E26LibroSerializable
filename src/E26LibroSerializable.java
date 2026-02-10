@@ -16,7 +16,13 @@ public class E26LibroSerializable{
         libro.add(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605));
 
         CrearFichero.crearFichero(libro);
-        LeerLibro.leerLibro();
+        //LeerLibro.leerLibro();
+
+
+        List<Libro> libros2 = LeerLibro.leerLibro2("libro.ser");
+        for (Libro libro1 : libros2) {
+            System.out.println(libro1.getTitulo() + libro1.getAutor() + libro1.getAnioPublicacion());
+        }
 
         do {
             System.out.println();
@@ -42,7 +48,7 @@ public class E26LibroSerializable{
         System.out.println();
 
         CrearFichero.crearFichero(libro);
-        LeerLibro.leerLibro();
+        //LeerLibro.leerLibro();
 
 
 
