@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class E26LibroSerializable{
     public static void main(String [] args){
-
+        Scanner sc = new Scanner(System.in);
         List<Libro> libro = new ArrayList<>();
+        boolean continuar = true;
 
         libro.add(new Libro("Brimstone", "Callie Hart", 2026));
         libro.add(new Libro("Cien años de soledad", "Gabriel García Márquez", 1967));
@@ -15,5 +17,34 @@ public class E26LibroSerializable{
 
         CrearFichero.crearFichero(libro);
         LeerLibro.leerLibro();
+
+        do {
+            System.out.println();
+            System.out.println("Añada un titulo");
+            String titulo = sc.nextLine();
+            System.out.println("Autor");
+            String autor = sc.nextLine();
+            System.out.println("Año de publicación");
+            int anioPublicacion = sc.nextInt();
+
+            libro.add(new Libro(titulo, autor, anioPublicacion));
+
+            System.out.println("¿Quiere añadir más libros?S/N");
+            String opcion = sc.nextLine();
+            sc.nextLine();
+
+            if(opcion.equalsIgnoreCase("N")){
+                continuar = false;
+            }
+
+        } while (!continuar);
+
+        System.out.println();
+
+        CrearFichero.crearFichero(libro);
+        LeerLibro.leerLibro();
+
+
+
     }
 }
